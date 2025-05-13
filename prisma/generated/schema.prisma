@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../prisma/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  password String
+  role     String?
+  garden   Garden[] @relation("UserGardens")
+}
+
+model Garden {
+  id         Int          @id @default(autoincrement())
+  userid     Int
+  name       String
+  user       User         @relation("UserGardens", fields: [userid], references: [id])
+  sale       Sale[]       @relation("GardenSale")
+  sensorData SensorData[] @relation("GardenSensorData")
+  vegetable  Vegetable[]  @relation("GardenVegetable")
+}
+
+model Vegetable {
+  id       Int    @id @default(autoincrement())
+  gardenid Int
+  name     String
+  import   Int
+  export   Int
+  price    Float
+  sale     Sale[] @relation("VegetableSale")
+  garden   Garden @relation("GardenVegetable", fields: [gardenid], references: [id])
+}
+
+model Sale {
+  id          Int       @id @default(autoincrement())
+  vegetableid Int
+  gardenid    Int
+  time        DateTime?
+  quantity    Int
+  total       Int
+  garden      Garden    @relation("GardenSale", fields: [gardenid], references: [id])
+  vegetable   Vegetable @relation("VegetableSale", fields: [vegetableid], references: [id])
+}
+
+model SensorData {
+  id          Int      @id @default(autoincrement())
+  gardenid    Int
+  humidity    Float
+  temperature Float
+  time        DateTime
+  garden      Garden   @relation("GardenSensorData", fields: [gardenid], references: [id])
+}
