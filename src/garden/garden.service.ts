@@ -22,7 +22,7 @@ export class GardenService {
   }
 
   async deleteGarden(id: number) {
-    return this.prisma.garden.delete({
+    this.prisma.garden.delete({
       where: { id: id * 1 },
     });
   }

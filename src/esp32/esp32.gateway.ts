@@ -32,6 +32,7 @@ export class Esp32Gateway implements OnGatewayConnection, OnGatewayDisconnect {
 
   @SubscribeMessage('message')
   handleMessage(@MessageBody() data: string): string {
+    console.log(data)
     this.server.emit('broadcast', data);
     return 'Message received';
   }

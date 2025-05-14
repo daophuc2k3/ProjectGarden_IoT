@@ -134,6 +134,7 @@ export class AppService {
 
       var exist = summary.findIndex((obj) => obj.id * 1 === sale.vegetableid);
       if (exist >= 0) {
+        var d = date.getFullYear()
         if (!summary[exist].sale[date.getFullYear()]) {
           summary[exist].sale[date.getFullYear()] = {};
           summary[exist].sale[date.getFullYear()].date = {};
@@ -145,16 +146,16 @@ export class AppService {
         } else {
           summary[exist].sale[date.getFullYear()].date[dayKey] = summary[exist]
             .sale[date.getFullYear()].date[dayKey]
-            ? summary[exist].sale[date.getFullYear()].date[dayKey] * 1
+            ? summary[exist].sale[date.getFullYear()].date[dayKey] * 1 + sale.total
             : 0 + sale.total;
           summary[exist].sale[date.getFullYear()].week[weekKey] = summary[exist]
             .sale[date.getFullYear()].week[weekKey]
-            ? summary[exist].sale[date.getFullYear()].week[weekKey] * 1
+            ? summary[exist].sale[date.getFullYear()].week[weekKey] * 1 + sale.total
             : 0 + sale.total;
           summary[exist].sale[date.getFullYear()].month[monthKey] = summary[
             exist
           ].sale[date.getFullYear()].month[monthKey]
-            ? summary[exist].sale[date.getFullYear()].month[monthKey] * 1
+            ? summary[exist].sale[date.getFullYear()].month[monthKey] * 1 + sale.total
             : 0 + sale.total;
         }
       } else {

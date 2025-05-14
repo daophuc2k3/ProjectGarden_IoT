@@ -2462,29 +2462,44 @@ export namespace Prisma {
   export type GardenAvgAggregateOutputType = {
     id: number | null
     userid: number | null
+    led1_status: number | null
+    led2_status: number | null
+    led3_status: number | null
   }
 
   export type GardenSumAggregateOutputType = {
     id: number | null
     userid: number | null
+    led1_status: number | null
+    led2_status: number | null
+    led3_status: number | null
   }
 
   export type GardenMinAggregateOutputType = {
     id: number | null
     userid: number | null
     name: string | null
+    led1_status: number | null
+    led2_status: number | null
+    led3_status: number | null
   }
 
   export type GardenMaxAggregateOutputType = {
     id: number | null
     userid: number | null
     name: string | null
+    led1_status: number | null
+    led2_status: number | null
+    led3_status: number | null
   }
 
   export type GardenCountAggregateOutputType = {
     id: number
     userid: number
     name: number
+    led1_status: number
+    led2_status: number
+    led3_status: number
     _all: number
   }
 
@@ -2492,29 +2507,44 @@ export namespace Prisma {
   export type GardenAvgAggregateInputType = {
     id?: true
     userid?: true
+    led1_status?: true
+    led2_status?: true
+    led3_status?: true
   }
 
   export type GardenSumAggregateInputType = {
     id?: true
     userid?: true
+    led1_status?: true
+    led2_status?: true
+    led3_status?: true
   }
 
   export type GardenMinAggregateInputType = {
     id?: true
     userid?: true
     name?: true
+    led1_status?: true
+    led2_status?: true
+    led3_status?: true
   }
 
   export type GardenMaxAggregateInputType = {
     id?: true
     userid?: true
     name?: true
+    led1_status?: true
+    led2_status?: true
+    led3_status?: true
   }
 
   export type GardenCountAggregateInputType = {
     id?: true
     userid?: true
     name?: true
+    led1_status?: true
+    led2_status?: true
+    led3_status?: true
     _all?: true
   }
 
@@ -2608,6 +2638,9 @@ export namespace Prisma {
     id: number
     userid: number
     name: string
+    led1_status: number
+    led2_status: number
+    led3_status: number
     _count: GardenCountAggregateOutputType | null
     _avg: GardenAvgAggregateOutputType | null
     _sum: GardenSumAggregateOutputType | null
@@ -2633,6 +2666,9 @@ export namespace Prisma {
     id?: boolean
     userid?: boolean
     name?: boolean
+    led1_status?: boolean
+    led2_status?: boolean
+    led3_status?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
     sale?: boolean | Garden$saleArgs<ExtArgs>
     sensorData?: boolean | Garden$sensorDataArgs<ExtArgs>
@@ -2644,6 +2680,9 @@ export namespace Prisma {
     id?: boolean
     userid?: boolean
     name?: boolean
+    led1_status?: boolean
+    led2_status?: boolean
+    led3_status?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["garden"]>
 
@@ -2651,6 +2690,9 @@ export namespace Prisma {
     id?: boolean
     userid?: boolean
     name?: boolean
+    led1_status?: boolean
+    led2_status?: boolean
+    led3_status?: boolean
     user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["garden"]>
 
@@ -2658,9 +2700,12 @@ export namespace Prisma {
     id?: boolean
     userid?: boolean
     name?: boolean
+    led1_status?: boolean
+    led2_status?: boolean
+    led3_status?: boolean
   }
 
-  export type GardenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userid" | "name", ExtArgs["result"]["garden"]>
+  export type GardenOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userid" | "name" | "led1_status" | "led2_status" | "led3_status", ExtArgs["result"]["garden"]>
   export type GardenInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     sale?: boolean | Garden$saleArgs<ExtArgs>
@@ -2687,6 +2732,9 @@ export namespace Prisma {
       id: number
       userid: number
       name: string
+      led1_status: number
+      led2_status: number
+      led3_status: number
     }, ExtArgs["result"]["garden"]>
     composites: {}
   }
@@ -3117,6 +3165,9 @@ export namespace Prisma {
     readonly id: FieldRef<"Garden", 'Int'>
     readonly userid: FieldRef<"Garden", 'Int'>
     readonly name: FieldRef<"Garden", 'String'>
+    readonly led1_status: FieldRef<"Garden", 'Int'>
+    readonly led2_status: FieldRef<"Garden", 'Int'>
+    readonly led3_status: FieldRef<"Garden", 'Int'>
   }
     
 
@@ -7015,7 +7066,10 @@ export namespace Prisma {
   export const GardenScalarFieldEnum: {
     id: 'id',
     userid: 'userid',
-    name: 'name'
+    name: 'name',
+    led1_status: 'led1_status',
+    led2_status: 'led2_status',
+    led3_status: 'led3_status'
   };
 
   export type GardenScalarFieldEnum = (typeof GardenScalarFieldEnum)[keyof typeof GardenScalarFieldEnum]
@@ -7208,6 +7262,9 @@ export namespace Prisma {
     id?: IntFilter<"Garden"> | number
     userid?: IntFilter<"Garden"> | number
     name?: StringFilter<"Garden"> | string
+    led1_status?: IntFilter<"Garden"> | number
+    led2_status?: IntFilter<"Garden"> | number
+    led3_status?: IntFilter<"Garden"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     sale?: SaleListRelationFilter
     sensorData?: SensorDataListRelationFilter
@@ -7218,6 +7275,9 @@ export namespace Prisma {
     id?: SortOrder
     userid?: SortOrder
     name?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
     user?: UserOrderByWithRelationInput
     sale?: SaleOrderByRelationAggregateInput
     sensorData?: SensorDataOrderByRelationAggregateInput
@@ -7231,6 +7291,9 @@ export namespace Prisma {
     NOT?: GardenWhereInput | GardenWhereInput[]
     userid?: IntFilter<"Garden"> | number
     name?: StringFilter<"Garden"> | string
+    led1_status?: IntFilter<"Garden"> | number
+    led2_status?: IntFilter<"Garden"> | number
+    led3_status?: IntFilter<"Garden"> | number
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     sale?: SaleListRelationFilter
     sensorData?: SensorDataListRelationFilter
@@ -7241,6 +7304,9 @@ export namespace Prisma {
     id?: SortOrder
     userid?: SortOrder
     name?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
     _count?: GardenCountOrderByAggregateInput
     _avg?: GardenAvgOrderByAggregateInput
     _max?: GardenMaxOrderByAggregateInput
@@ -7255,6 +7321,9 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Garden"> | number
     userid?: IntWithAggregatesFilter<"Garden"> | number
     name?: StringWithAggregatesFilter<"Garden"> | string
+    led1_status?: IntWithAggregatesFilter<"Garden"> | number
+    led2_status?: IntWithAggregatesFilter<"Garden"> | number
+    led3_status?: IntWithAggregatesFilter<"Garden"> | number
   }
 
   export type VegetableWhereInput = {
@@ -7503,6 +7572,9 @@ export namespace Prisma {
 
   export type GardenCreateInput = {
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     user: UserCreateNestedOneWithoutGardenInput
     sale?: SaleCreateNestedManyWithoutGardenInput
     sensorData?: SensorDataCreateNestedManyWithoutGardenInput
@@ -7513,6 +7585,9 @@ export namespace Prisma {
     id?: number
     userid: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     sale?: SaleUncheckedCreateNestedManyWithoutGardenInput
     sensorData?: SensorDataUncheckedCreateNestedManyWithoutGardenInput
     vegetable?: VegetableUncheckedCreateNestedManyWithoutGardenInput
@@ -7520,6 +7595,9 @@ export namespace Prisma {
 
   export type GardenUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutGardenNestedInput
     sale?: SaleUpdateManyWithoutGardenNestedInput
     sensorData?: SensorDataUpdateManyWithoutGardenNestedInput
@@ -7530,6 +7608,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     userid?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     sale?: SaleUncheckedUpdateManyWithoutGardenNestedInput
     sensorData?: SensorDataUncheckedUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUncheckedUpdateManyWithoutGardenNestedInput
@@ -7539,16 +7620,25 @@ export namespace Prisma {
     id?: number
     userid: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
   }
 
   export type GardenUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
   }
 
   export type GardenUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     userid?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
   }
 
   export type VegetableCreateInput = {
@@ -7903,28 +7993,43 @@ export namespace Prisma {
     id?: SortOrder
     userid?: SortOrder
     name?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
   }
 
   export type GardenAvgOrderByAggregateInput = {
     id?: SortOrder
     userid?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
   }
 
   export type GardenMaxOrderByAggregateInput = {
     id?: SortOrder
     userid?: SortOrder
     name?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
   }
 
   export type GardenMinOrderByAggregateInput = {
     id?: SortOrder
     userid?: SortOrder
     name?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
   }
 
   export type GardenSumOrderByAggregateInput = {
     id?: SortOrder
     userid?: SortOrder
+    led1_status?: SortOrder
+    led2_status?: SortOrder
+    led3_status?: SortOrder
   }
 
   export type FloatFilter<$PrismaModel = never> = {
@@ -8629,6 +8734,9 @@ export namespace Prisma {
 
   export type GardenCreateWithoutUserInput = {
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     sale?: SaleCreateNestedManyWithoutGardenInput
     sensorData?: SensorDataCreateNestedManyWithoutGardenInput
     vegetable?: VegetableCreateNestedManyWithoutGardenInput
@@ -8637,6 +8745,9 @@ export namespace Prisma {
   export type GardenUncheckedCreateWithoutUserInput = {
     id?: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     sale?: SaleUncheckedCreateNestedManyWithoutGardenInput
     sensorData?: SensorDataUncheckedCreateNestedManyWithoutGardenInput
     vegetable?: VegetableUncheckedCreateNestedManyWithoutGardenInput
@@ -8675,6 +8786,9 @@ export namespace Prisma {
     id?: IntFilter<"Garden"> | number
     userid?: IntFilter<"Garden"> | number
     name?: StringFilter<"Garden"> | string
+    led1_status?: IntFilter<"Garden"> | number
+    led2_status?: IntFilter<"Garden"> | number
+    led3_status?: IntFilter<"Garden"> | number
   }
 
   export type UserCreateWithoutGardenInput = {
@@ -8908,6 +9022,9 @@ export namespace Prisma {
 
   export type GardenCreateWithoutVegetableInput = {
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     user: UserCreateNestedOneWithoutGardenInput
     sale?: SaleCreateNestedManyWithoutGardenInput
     sensorData?: SensorDataCreateNestedManyWithoutGardenInput
@@ -8917,6 +9034,9 @@ export namespace Prisma {
     id?: number
     userid: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     sale?: SaleUncheckedCreateNestedManyWithoutGardenInput
     sensorData?: SensorDataUncheckedCreateNestedManyWithoutGardenInput
   }
@@ -8955,6 +9075,9 @@ export namespace Prisma {
 
   export type GardenUpdateWithoutVegetableInput = {
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutGardenNestedInput
     sale?: SaleUpdateManyWithoutGardenNestedInput
     sensorData?: SensorDataUpdateManyWithoutGardenNestedInput
@@ -8964,12 +9087,18 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     userid?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     sale?: SaleUncheckedUpdateManyWithoutGardenNestedInput
     sensorData?: SensorDataUncheckedUpdateManyWithoutGardenNestedInput
   }
 
   export type GardenCreateWithoutSaleInput = {
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     user: UserCreateNestedOneWithoutGardenInput
     sensorData?: SensorDataCreateNestedManyWithoutGardenInput
     vegetable?: VegetableCreateNestedManyWithoutGardenInput
@@ -8979,6 +9108,9 @@ export namespace Prisma {
     id?: number
     userid: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     sensorData?: SensorDataUncheckedCreateNestedManyWithoutGardenInput
     vegetable?: VegetableUncheckedCreateNestedManyWithoutGardenInput
   }
@@ -9023,6 +9155,9 @@ export namespace Prisma {
 
   export type GardenUpdateWithoutSaleInput = {
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutGardenNestedInput
     sensorData?: SensorDataUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUpdateManyWithoutGardenNestedInput
@@ -9032,6 +9167,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     userid?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     sensorData?: SensorDataUncheckedUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUncheckedUpdateManyWithoutGardenNestedInput
   }
@@ -9066,6 +9204,9 @@ export namespace Prisma {
 
   export type GardenCreateWithoutSensorDataInput = {
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     user: UserCreateNestedOneWithoutGardenInput
     sale?: SaleCreateNestedManyWithoutGardenInput
     vegetable?: VegetableCreateNestedManyWithoutGardenInput
@@ -9075,6 +9216,9 @@ export namespace Prisma {
     id?: number
     userid: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
     sale?: SaleUncheckedCreateNestedManyWithoutGardenInput
     vegetable?: VegetableUncheckedCreateNestedManyWithoutGardenInput
   }
@@ -9097,6 +9241,9 @@ export namespace Prisma {
 
   export type GardenUpdateWithoutSensorDataInput = {
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     user?: UserUpdateOneRequiredWithoutGardenNestedInput
     sale?: SaleUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUpdateManyWithoutGardenNestedInput
@@ -9106,6 +9253,9 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     userid?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     sale?: SaleUncheckedUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUncheckedUpdateManyWithoutGardenNestedInput
   }
@@ -9113,10 +9263,16 @@ export namespace Prisma {
   export type GardenCreateManyUserInput = {
     id?: number
     name: string
+    led1_status?: number
+    led2_status?: number
+    led3_status?: number
   }
 
   export type GardenUpdateWithoutUserInput = {
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     sale?: SaleUpdateManyWithoutGardenNestedInput
     sensorData?: SensorDataUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUpdateManyWithoutGardenNestedInput
@@ -9125,6 +9281,9 @@ export namespace Prisma {
   export type GardenUncheckedUpdateWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
     sale?: SaleUncheckedUpdateManyWithoutGardenNestedInput
     sensorData?: SensorDataUncheckedUpdateManyWithoutGardenNestedInput
     vegetable?: VegetableUncheckedUpdateManyWithoutGardenNestedInput
@@ -9133,6 +9292,9 @@ export namespace Prisma {
   export type GardenUncheckedUpdateManyWithoutUserInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
+    led1_status?: IntFieldUpdateOperationsInput | number
+    led2_status?: IntFieldUpdateOperationsInput | number
+    led3_status?: IntFieldUpdateOperationsInput | number
   }
 
   export type SaleCreateManyGardenInput = {

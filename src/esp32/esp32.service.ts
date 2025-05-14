@@ -34,4 +34,37 @@ export class Esp32Service {
       },
     });
   }
+
+  async getlightstatusGarden(id){
+     return await this.prisma.garden.findFirst({
+      where : {id: id *1}
+    });
+  }
+
+  async updateled1statusGarden(id, uid, led1){
+     return await this.prisma.garden.update({
+      where : {id: id *1, userid: uid*1 },
+      data: {
+        led1_status : led1*1
+      }
+    });
+  }
+
+  async updateled2statusGarden(id, uid, led2){
+     return await this.prisma.garden.update({
+      where : {id: id *1, userid: uid*1 },
+      data: {
+        led2_status : led2*1
+      }
+    });
+  }
+  
+  async updateled3statusGarden(id, uid, led3){
+     return await this.prisma.garden.update({
+      where : {id: id *1, userid: uid*1 },
+      data: {
+        led3_status : led3*1
+      }
+    });
+  }
 }

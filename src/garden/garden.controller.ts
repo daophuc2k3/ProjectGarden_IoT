@@ -75,10 +75,11 @@ export class GardenController {
     }
 
     const garden = this.gardenservice.getgarden(id);
-    if ((await garden).id === user.userId) {
+     if (user.role === 'user'){
+    if ((await garden).userid === user.userId) {
       await this.gardenservice.editgarden(id, update);
       return 'Cập nhật khu vườn thành công!';
-    }
+    }}
     return 'Khu vườn không phải của bạn!';
   }
 
@@ -94,8 +95,8 @@ export class GardenController {
       await this.gardenservice.deleteGarden(id);
       return 'Đã xóa khu vườn thành công!';
     }
-    const garden = this.gardenservice.getgarden(id);
-    if ((await garden).id === user.userId) {
+    const garden = await this.gardenservice.getgarden(id);
+    if (garden.userid === user.userId) {
       await this.gardenservice.deleteGarden(id);
       return 'Xóa khu vườn thành công!';
     }

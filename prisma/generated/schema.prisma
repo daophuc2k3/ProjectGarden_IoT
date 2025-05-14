@@ -18,13 +18,16 @@ model User {
 }
 
 model Garden {
-  id         Int          @id @default(autoincrement())
-  userid     Int
-  name       String
-  user       User         @relation("UserGardens", fields: [userid], references: [id])
-  sale       Sale[]       @relation("GardenSale")
-  sensorData SensorData[] @relation("GardenSensorData")
-  vegetable  Vegetable[]  @relation("GardenVegetable")
+  id          Int          @id @default(autoincrement())
+  userid      Int
+  name        String
+  led1_status Int          @default(0)
+  led2_status Int          @default(0)
+  led3_status Int          @default(0)
+  user        User         @relation("UserGardens", fields: [userid], references: [id])
+  sale        Sale[]       @relation("GardenSale")
+  sensorData  SensorData[] @relation("GardenSensorData")
+  vegetable   Vegetable[]  @relation("GardenVegetable")
 }
 
 model Vegetable {

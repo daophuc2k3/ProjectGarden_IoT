@@ -128,7 +128,10 @@ exports.Prisma.UserScalarFieldEnum = {
 exports.Prisma.GardenScalarFieldEnum = {
   id: 'id',
   userid: 'userid',
-  name: 'name'
+  name: 'name',
+  led1_status: 'led1_status',
+  led2_status: 'led2_status',
+  led3_status: 'led3_status'
 };
 
 exports.Prisma.VegetableScalarFieldEnum = {
