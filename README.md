@@ -1,6 +1,20 @@
 # ProjectGarden_IoT
 Đây là project cuối kì thực tập tại Yootek Holdings - Song Nam Group
 
+Xây dựng một hệ thống IoT giúp người dùng quản lý khu vườn của mình. Hệ thống bao
+gồm:
+- Quản lý khu vườn: Mỗi người dùng quản lý một khu vườn, trong đó có các loại rau
+với thông tin như tên rau, số lượng nhập vào, số lượng bán ra, và giá bán riêng cho
+từng loại rau.
+- Giám sát môi trường: Hệ thống nhận dữ liệu nhiệt độ, độ ẩm từ thiết bị IoT (ví dụ:
+ESP32) thông qua giao thức MQTT và hiển thị dữ liệu thời gian thực qua
+WebSocket.
+- Quản lý môi trường: Hệ thống vườn có 3 loại đèn: đỏ, vàng ,xanh. Dùng MQTT để
+bật tắt đèn qua API
+- Quản lý doanh thu: Tính toán doanh thu dựa trên số lượng rau bán ra và giá bán.
+- Bảo mật: Sử dụng Authentication (JWT) và Role-based Authorization để phân quyền
+người dùng (Admin và User).
+
 ## Hướng dẫn chạy dự án
 
 ### Yêu cầu trước khi chạy
